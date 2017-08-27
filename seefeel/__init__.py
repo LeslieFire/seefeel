@@ -3,7 +3,7 @@
 # author: seefeel
 # date: 2017-08-27
 
-import clean
-import clusterutils
-import stringutils
-import tokenizer
+import .clean
+import .clusterutils
+import .stringutils
+import .tokenizer
