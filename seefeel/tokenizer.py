@@ -10,9 +10,9 @@ import jieba
 STOP_WORDS_PATH = 'stop_words.txt'
 
 
+
 def stop_words():
-    path = 'stop_words.txt'
-    with open(path) as file:
+    with open(STOP_WORDS_PATH, 'r') as file:
         words = [ line.strip() for line in file]
     return set(words)
 
@@ -62,4 +62,4 @@ def ngram_tokenizer(text, ngram = 2):
 
 
 def jieba_tokenizer(text):
-    return jieba.cut(text)
+    return filter(lambda x: len(x.strip()) > 0 , jieba.cut(clean_pre(text)))
