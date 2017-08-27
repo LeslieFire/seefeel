@@ -12,7 +12,7 @@ def top_terms_per_cluster(km, cluster_n, vectorizer):
 
     terms = vectorizer.get_feature_names()
     for i in range(cluster_n):
-        print("Cluster %d:" % i, end='')
+        print("Cluster %d:" % i, end=" ")
         for ind in order_centroids[i, :10]:
             print(' %s' % terms[ind], end='')
         print()
