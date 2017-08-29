@@ -13,4 +13,6 @@ setup(name='seefeel',
       author_email='249893977@qq.com',
       license='MIT',
       packages=['seefeel'],
+      package_dir={'seefeel': 'seefeel'},
+      package_data={'seefeel':['*.*', 'seefeel/*']},
       zip_safe=False)
