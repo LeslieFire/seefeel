@@ -9,10 +9,10 @@ import jieba
 
 STOP_WORDS_PATH = 'stop_words.txt'
 
-
+_get_abs_path = lambda path: os.path.normpath(os.path.join(os.getcwd(), path))
 
 def stop_words():
-    with open(STOP_WORDS_PATH, 'r') as file:
+    with open(_get_abs_path(STOP_WORDS_PATH), 'r') as file:
         words = [ line.strip() for line in file]
     return set(words)
 
