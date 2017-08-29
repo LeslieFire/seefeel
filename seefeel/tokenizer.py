@@ -62,4 +62,4 @@ def ngram_tokenizer(text, ngram = 2):
 
 
 def jieba_tokenizer(text):
-    return filter(lambda x: len(x.strip()) > 0 , jieba.cut(clean_pre(text)))
+    return filter(lambda x: len(x.strip()) > 0 , jieba.cut(text))

@@ -70,13 +70,13 @@ regex_keywords = re.compile('|'.join(list(keywords)))
 def clean_keywords(text):
     return re.sub(regex_keywords, ' ', text)
 
-regex_at = re.compile(r'@[^ ]+ ')
+regex_at = re.compile(r'@[^: 。]+')
 regex_at2 = re.compile(r'@[^ ]+$')
 regex_reat = re.compile(r'//@[^:]+:')
 def clean_at(text):
     text = re.sub(regex_reat, ' ', text)
     text = re.sub(regex_at, ' ', text)
-    text = re.sub(regex_at2, ' ', text)
+    #text = re.sub(regex_at2, ' ', text)
     
     return text
     
