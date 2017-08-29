@@ -6,6 +6,7 @@
 
 from collections import defaultdict
 import jieba
+import os
 
 STOP_WORDS_PATH = 'stop_words.txt'
 
