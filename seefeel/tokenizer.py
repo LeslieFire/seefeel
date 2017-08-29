@@ -6,15 +6,14 @@
 
 from collections import defaultdict
 import jieba
-import os
+from ._compat import *
+
 
 STOP_WORDS_PATH = 'stop_words.txt'
 
-_get_abs_path = lambda path: os.path.normpath(os.path.join(os.getcwd(), path))
 
 def stop_words():
-    with open(_get_abs_path(STOP_WORDS_PATH), 'r') as file:
-        words = [ line.strip() for line in file]
+    words = [ line.strip() for line in get_module_res(STOP_WORDS_PATH)]
     return set(words)
 
 stop_words = stop_words()
