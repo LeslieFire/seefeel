@@ -46,7 +46,21 @@ regex_topic = re.compile('#.+?#')
 def clean_topic(text):
     return re.sub(regex_topic, ' ', text)
 
+def extract_topic(text, sep = '|'):
+    m = regex_topic.findall(text)
+    if len(m) > 0:
+        return sep.join(m)
+    else:
+        return ''
+
 regex_emotion = re.compile('\[[^\] ]{1,8}\]')
+def extract_emotion(text, sep = '|'):
+    m = regex_emotion.findall(text)
+    if len(m) > 0:
+        return sep.join(m)
+    else:
+        return ''
+
 def clean_emotion(text):
     return re.sub(regex_emotion, ' ', text)
 
@@ -98,3 +112,4 @@ def clean_unusual_words(text):
 
 def clean_special_punc(text):
     pass
+
