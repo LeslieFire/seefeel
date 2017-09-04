@@ -46,10 +46,11 @@ regex_topic = re.compile('#.+?#')
 def clean_topic(text):
     return re.sub(regex_topic, ' ', text)
 
-regex_emotion = re.compile('\[.{1,8}\]')
+regex_emotion = re.compile('\[[^\] ]{1,8}\]')
 def clean_emotion(text):
     return re.sub(regex_emotion, ' ', text)
 
+# TODO：这个正则有bug。 add by leslie @20170829
 regex_url = re.compile(r'(https?:\/\/(w{3}\.)?)?\w+\.[a-zA-Z]+(\.[a-zA-Z]+)*(:\d{1,5})?(\/\w*)*(\??(.+=.*)?(&.+=.*)?)?')
 def clean_url(text):
     return re.sub(regex_url, ' ', text)
