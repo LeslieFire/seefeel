@@ -20,8 +20,14 @@ stop_words = stop_words()
 print('Loading {} stopwords. '.format(len(stop_words)))
 
 
+def check_contain_chinese(check_str):
+    for ch in check_str:
+        if u'\u4e00' <= ch <= u'\u9fff':
+            return True
+    return False
+
 def ngram_tokenizer_and_filter_stopwords(text, ngram = 2):
-    return filter(lambda x: x not in stop_words and len(x) > 1, ngram_tokenizer(text, ngram))
+    return filter(lambda x: x not in stop_words and len(x) > 1 and check_contain_chinese(x), ngram_tokenizer(text, ngram))
 
 def tokenize_and_filter_stopwords(text):
     if type(text) is str:
