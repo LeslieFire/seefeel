@@ -6,6 +6,7 @@
 
 from collections import defaultdict
 import jieba
+import os
 
 get_module_res = lambda *res: open(os.path.normpath(os.path.join(
                             os.getcwd(), os.path.dirname(__file__), *res)), 'r')
