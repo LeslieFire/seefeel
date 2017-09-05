@@ -7,5 +7,3 @@
 # import clusterutils
 # import stringutils
 # import tokenizer
-
-from ._compat import *
