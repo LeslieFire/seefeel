@@ -6,8 +6,9 @@
 
 from collections import defaultdict
 import jieba
-from ._compat import *
 
+get_module_res = lambda *res: open(os.path.normpath(os.path.join(
+                            os.getcwd(), os.path.dirname(__file__), *res)), 'r')
 
 STOP_WORDS_PATH = 'stop_words.txt'
 
