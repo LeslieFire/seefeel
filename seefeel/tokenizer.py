@@ -9,7 +9,7 @@ import jieba
 import os
 
 get_module_res = lambda *res: open(os.path.normpath(os.path.join(
-                            os.getcwd(), os.path.dirname(__file__), *res)), 'r')
+                            os.getcwd(), os.path.dirname(__file__), *res)), mode = 'r', encoding='utf-8')
 
 STOP_WORDS_PATH = 'stop_words.txt'
 

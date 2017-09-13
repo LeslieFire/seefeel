@@ -6,7 +6,7 @@
 from setuptools import setup
 
 setup(name='seefeel',
-      username='seefeel'
+      username='seefeel',
       version='0.1',
       description='utils for text preprocess',
       url='https://github.com/LeslieFire/seefeel',
